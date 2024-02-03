@@ -27,6 +27,16 @@ dependencies {
     library("com.mysql:mysql-connector-j:8.2.0")
 }
 
+bukkit {
+    name = "NameLogger"
+    version = getVersion().toString()
+    description = "プレイヤー名ログ取得"
+    author = "deceitya"
+    main = "mc.tsukimiya.NameLogger"
+    apiVersion = mcVersion.substring(0, mcVersion.lastIndexOf("."))
+    load = BukkitPluginDescription.PluginLoadOrder.POSTWORLD
+}
+
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }

@@ -7,7 +7,7 @@ import java.util.UUID
 /**
  * プレイヤー名の更新履歴
  */
-class UpdateNameHistory(val uuid: UUID) {
+internal class UpdateNameHistory(val uuid: UUID) {
     private val history = mutableMapOf<LocalDateTime, Name>()
 
     /**

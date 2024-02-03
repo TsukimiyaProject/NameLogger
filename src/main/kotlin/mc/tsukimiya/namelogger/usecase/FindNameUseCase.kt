@@ -5,7 +5,7 @@ import mc.tsukimiya.namelogger.domain.Name
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
-class FindNameUseCase(private val repository: AccountRepository) {
+internal class FindNameUseCase(private val repository: AccountRepository) {
     fun execute(uuid: UUID): Name? {
         return transaction {
             repository.find(uuid)?.name

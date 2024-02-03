@@ -3,4 +3,4 @@ package mc.tsukimiya.namelogger.domain
 /**
  * プレイヤー名
  */
-data class Name(val value: String)
+internal data class Name(val value: String)

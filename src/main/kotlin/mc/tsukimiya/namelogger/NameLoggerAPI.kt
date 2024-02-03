@@ -1,4 +1,4 @@
-package mc.tsukimiya
+package mc.tsukimiya.namelogger
 
 import java.time.LocalDateTime
 import java.util.UUID

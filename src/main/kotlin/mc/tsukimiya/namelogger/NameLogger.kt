@@ -1,4 +1,4 @@
-package mc.tsukimiya
+package mc.tsukimiya.namelogger
 
 import org.bukkit.plugin.java.JavaPlugin
 import java.time.LocalDateTime

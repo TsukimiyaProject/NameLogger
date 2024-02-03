@@ -1,4 +1,4 @@
-package mc.tsukimiya.domain
+package mc.tsukimiya.namelogger.domain
 
 import java.time.LocalDateTime
 import java.util.*

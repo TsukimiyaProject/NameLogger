@@ -4,10 +4,10 @@ plugins {
     kotlin("jvm") version "1.9.0"
     `maven-publish`
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("net.minecrell.plugin-yml.bukkit") version "0.5.2"
+    id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
 }
 
-group = "mc.tsukimiya"
+group = "mc.tsukimiya.namelogger"
 version = "1.0-SNAPSHOT"
 
 val mcVersion = "1.20.1"
@@ -32,7 +32,7 @@ bukkit {
     version = getVersion().toString()
     description = "プレイヤー名ログ取得"
     author = "deceitya"
-    main = "mc.tsukimiya.NameLogger"
+    main = "mc.tsukimiya.namelogger.NameLogger"
     apiVersion = mcVersion.substring(0, mcVersion.lastIndexOf("."))
     load = BukkitPluginDescription.PluginLoadOrder.POSTWORLD
 }

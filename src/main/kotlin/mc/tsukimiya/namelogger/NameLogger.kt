@@ -1,5 +1,6 @@
 package mc.tsukimiya.namelogger
 
+import mc.tsukimiya.namelogger.presentation.NameLoggerAPI
 import org.bukkit.plugin.java.JavaPlugin
 import java.time.LocalDateTime
 import java.util.*

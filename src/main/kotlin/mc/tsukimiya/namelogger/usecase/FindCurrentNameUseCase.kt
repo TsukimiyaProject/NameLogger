@@ -1,14 +1,16 @@
 package mc.tsukimiya.namelogger.usecase
 
 import mc.tsukimiya.namelogger.domain.AccountRepository
-import mc.tsukimiya.namelogger.domain.Name
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
-internal class FindNameUseCase(private val repository: AccountRepository) {
-    fun execute(uuid: UUID): Name? {
+/**
+ * 最新の名前を取得
+ */
+internal class FindCurrentNameUseCase(private val repository: AccountRepository) {
+    fun execute(uuid: UUID): String? {
         return transaction {
-            repository.find(uuid)?.name
+            repository.find(uuid)?.name?.value
         }
     }
 }

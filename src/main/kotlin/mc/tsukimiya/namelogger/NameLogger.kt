@@ -3,6 +3,7 @@ package mc.tsukimiya.namelogger
 import mc.tsukimiya.namelogger.infrastructure.repository.AccountRepositoryImpl
 import mc.tsukimiya.namelogger.presentation.NameLoggerAPI
 import mc.tsukimiya.namelogger.usecase.FindCurrentNameUseCase
+import mc.tsukimiya.namelogger.usecase.FindIDUseCase
 import org.bukkit.plugin.java.JavaPlugin
 import java.time.LocalDateTime
 import java.util.*
@@ -20,6 +21,10 @@ class NameLogger : JavaPlugin(), NameLoggerAPI {
 
     override fun getCurrentName(uuid: UUID): String? {
         return FindCurrentNameUseCase(accountRepository).execute(uuid)
+    }
+
+    override fun getIDByName(name: String): UUID? {
+        return FindIDUseCase(accountRepository).execute(name)
     }
 
     override fun getOldNames(uuid: UUID): Map<LocalDateTime, String>? {

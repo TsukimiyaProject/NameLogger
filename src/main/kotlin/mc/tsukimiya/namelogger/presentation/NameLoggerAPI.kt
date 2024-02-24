@@ -13,6 +13,14 @@ interface NameLoggerAPI {
     fun getCurrentName(uuid: UUID): String?
 
     /**
+     * 名前からUUIDを取得
+     *
+     * @param name
+     * @return
+     */
+    fun getIDByName(name: String): UUID?
+
+    /**
      * 過去のプレイヤー名を取得
      *
      * @param uuid

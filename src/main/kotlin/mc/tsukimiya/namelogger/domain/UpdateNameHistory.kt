@@ -1,8 +1,7 @@
 package mc.tsukimiya.namelogger.domain
 
 import java.time.LocalDateTime
-import java.util.SortedMap
-import java.util.UUID
+import java.util.*
 
 /**
  * プレイヤー名の更新履歴

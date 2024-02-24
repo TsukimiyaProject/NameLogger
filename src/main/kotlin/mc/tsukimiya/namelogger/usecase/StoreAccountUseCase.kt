@@ -4,7 +4,7 @@ import mc.tsukimiya.namelogger.domain.Account
 import mc.tsukimiya.namelogger.domain.AccountRepository
 import mc.tsukimiya.namelogger.domain.Name
 import org.jetbrains.exposed.sql.transactions.transaction
-import java.util.UUID
+import java.util.*
 
 /**
  * アカウントを保存

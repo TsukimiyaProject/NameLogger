@@ -15,10 +15,18 @@ val mcVersion = "1.20.1"
 repositories {
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
+    maven {
+        url = uri("https://maven.pkg.github.com/tsukimiyaproject/Lib4B")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:${mcVersion}-R0.1-SNAPSHOT")
+    compileOnly("mc.tsukimiya:lib4b:1.1.2")
     library(kotlin("stdlib"))
     library("org.jetbrains.exposed:exposed-core:0.41.1")
     library("org.jetbrains.exposed:exposed-jdbc:0.41.1")

@@ -1,0 +1,10 @@
+db-type: sqlite
+sqlite:
+  folder: database
+  file: TsukimiyaProject.db
+mysql:
+  address: localhost
+  port: 3306
+  database: tsukimiya_project
+  user: root
+  password: password

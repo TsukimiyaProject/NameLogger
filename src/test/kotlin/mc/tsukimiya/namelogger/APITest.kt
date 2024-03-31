@@ -13,16 +13,21 @@ import kotlin.random.Random
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class APITest {
     /**
-     * 普通の挿入、取得及び複数件レコードがあっても取得正しい値が取得できるか
+     * 普通の挿入、取得ができるか
      */
     @Test
     fun test1() {
+        val map = mutableMapOf<UUID, String>()
         for (i in 1..10) {
             val uuid = UUID.randomUUID()
             val name = getRandomString(Random.nextInt(from = 1, until = 16))
             NameLogger.api.updateAccountName(uuid, name)
-            assert(NameLogger.api.getCurrentName(uuid) == name)
-            assert(NameLogger.api.getIDByName(name) == uuid)
+            map[uuid] = name
+        }
+
+        map.forEach { (key, value) ->
+            assert(NameLogger.api.getCurrentName(key) == value)
+            assert(NameLogger.api.getIDByName(value) == key)
         }
     }
 
@@ -57,9 +62,9 @@ class APITest {
         val name2 = getRandomString(17)
         assertThrows<IllegalArgumentException> { NameLogger.api.updateAccountName(uuid2, name2) }
 
-        // 17文字以上(メモリ問題のため100文字まで)
+        // 17文字以上(メモリ問題のため1000文字まで)
         val uuid3 = UUID.randomUUID()
-        val name3 = getRandomString(Random.nextInt(from = 17, until = 100))
+        val name3 = getRandomString(Random.nextInt(from = 17, until = 1000))
         assertThrows<IllegalArgumentException> { NameLogger.api.updateAccountName(uuid3, name3) }
     }
 

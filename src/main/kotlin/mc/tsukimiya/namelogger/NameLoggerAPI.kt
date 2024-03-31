@@ -1,4 +1,4 @@
-package mc.tsukimiya.namelogger.presentation
+package mc.tsukimiya.namelogger
 
 import java.time.LocalDateTime
 import java.util.*

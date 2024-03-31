@@ -1,4 +1,4 @@
-package mc.tsukimiya.namelogger.presentation
+package mc.tsukimiya.namelogger.presentation.listener
 
 import mc.tsukimiya.namelogger.NameLogger
 import org.bukkit.event.EventHandler

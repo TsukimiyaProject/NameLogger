@@ -1,7 +1,6 @@
 package mc.tsukimiya.namelogger
 
 import mc.tsukimiya.namelogger.infrastructure.repository.AccountRepositoryImpl
-import mc.tsukimiya.namelogger.presentation.NameLoggerAPI
 import mc.tsukimiya.namelogger.usecase.FindCurrentNameUseCase
 import mc.tsukimiya.namelogger.usecase.FindIDUseCase
 import mc.tsukimiya.namelogger.usecase.StoreAccountUseCase

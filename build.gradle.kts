@@ -1,4 +1,5 @@
 import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     kotlin("jvm") version "1.9.0"
@@ -33,6 +34,15 @@ dependencies {
     library("org.jetbrains.exposed:exposed-dao:0.41.1")
     library("org.xerial:sqlite-jdbc:3.41.2.2")
     library("com.mysql:mysql-connector-j:8.2.0")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation("io.papermc.paper:paper-api:${mcVersion}-R0.1-SNAPSHOT")
+    testImplementation("org.jetbrains.exposed:exposed-core:0.41.1")
+    testImplementation("org.jetbrains.exposed:exposed-jdbc:0.41.1")
+    testImplementation("org.jetbrains.exposed:exposed-dao:0.41.1")
+    testImplementation("org.xerial:sqlite-jdbc:3.41.2.2")
+    testImplementation("com.zaxxer:HikariCP:4.0.3")
 }
 
 bukkit {
@@ -47,6 +57,17 @@ bukkit {
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+tasks.getByName<Test>("test") {
+    useJUnitPlatform()
+
+    testLogging {
+        // 標準出力を表示する
+        showStandardStreams = true
+        // 例外発生時の出力設定
+        exceptionFormat = TestExceptionFormat.FULL
+    }
 }
 
 publishing {

@@ -17,7 +17,7 @@ repositories {
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
     maven {
-        url = uri("https://maven.pkg.github.com/tsukimiyaproject/Lib4B")
+        url = uri("https://maven.pkg.github.com/TsukimiyaProject/Lib4B")
         credentials {
             username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
             password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
@@ -74,7 +74,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/tsukimiyaproject/NameLogger")
+            url = uri("https://maven.pkg.github.com/TsukimiyaProject/NameLogger")
             credentials {
                 username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
                 password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
@@ -84,7 +84,6 @@ publishing {
 
     publications {
         register<MavenPublication>("gpr") {
-            artifactId = "name-logger"
             from(components["java"])
         }
     }

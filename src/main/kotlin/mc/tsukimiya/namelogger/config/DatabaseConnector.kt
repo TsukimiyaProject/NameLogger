@@ -11,7 +11,7 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class DatabaseConnector {
+internal class DatabaseConnector {
     fun connect(config: FileConfiguration) {
         when (val type = config.getString("db-type")) {
             "sqlite" -> {

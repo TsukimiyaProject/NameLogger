@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "mc.tsukimiya.namelogger"
-version = "1.0-SNAPSHOT"
+version = "0.1.0"
 
 val mcVersion = "1.20.1"
 

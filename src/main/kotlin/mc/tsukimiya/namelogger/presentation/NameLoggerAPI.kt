@@ -27,4 +27,12 @@ interface NameLoggerAPI {
      * @return
      */
     fun getOldNames(uuid: UUID): Map<LocalDateTime, String>?
+
+    /**
+     * アカウント名を更新
+     *
+     * @param uuid プレイヤーUUID
+     * @param name プレイヤー名
+     */
+    fun updateAccountName(uuid: UUID, name: String)
 }

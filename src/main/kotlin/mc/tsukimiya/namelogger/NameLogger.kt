@@ -10,13 +10,13 @@ import java.util.*
 
 class NameLogger : JavaPlugin(), NameLoggerAPI {
     companion object {
-        lateinit var api: NameLoggerAPI
+        lateinit var instance: NameLogger
     }
 
     private val accountRepository = AccountRepositoryImpl()
 
     override fun onEnable() {
-        api = this
+        instance = this
     }
 
     override fun getCurrentName(uuid: UUID): String? {

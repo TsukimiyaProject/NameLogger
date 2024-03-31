@@ -9,6 +9,6 @@ class PlayerJoinListener : Listener {
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
         val player = event.player
-        NameLogger.api.updateAccountName(player.uniqueId, player.name)
+        NameLogger.instance.updateAccountName(player.uniqueId, player.name)
     }
 }

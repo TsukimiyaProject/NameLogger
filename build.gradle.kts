@@ -81,8 +81,10 @@ publishing {
             }
         }
     }
+
     publications {
         register<MavenPublication>("gpr") {
+            artifactId = "name-logger"
             from(components["java"])
         }
     }

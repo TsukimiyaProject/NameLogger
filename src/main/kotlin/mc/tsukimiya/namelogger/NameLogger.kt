@@ -1,6 +1,8 @@
 package mc.tsukimiya.namelogger
 
+import mc.tsukimiya.namelogger.config.DatabaseConnector
 import mc.tsukimiya.namelogger.infrastructure.repository.AccountRepositoryImpl
+import mc.tsukimiya.namelogger.presentation.listener.PlayerJoinListener
 import mc.tsukimiya.namelogger.usecase.FindCurrentNameUseCase
 import mc.tsukimiya.namelogger.usecase.FindIDUseCase
 import mc.tsukimiya.namelogger.usecase.StoreAccountUseCase
@@ -17,6 +19,16 @@ class NameLogger : JavaPlugin(), NameLoggerAPI {
 
     override fun onEnable() {
         instance = this
+
+        dataFolder.mkdir()
+        saveDefaultConfig()
+        // resources/config.ymlに項目が追加された場合コンフィグに書き込む
+        config.options().copyDefaults(true)
+        saveConfig()
+
+        server.pluginManager.registerEvents(PlayerJoinListener(), this)
+
+        DatabaseConnector().connect(config)
     }
 
     override fun getCurrentName(uuid: UUID): String? {

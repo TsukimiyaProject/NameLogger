@@ -8,7 +8,7 @@ v2.0で変更履歴実装予定
 ```gradle
 repositories {
     maven {
-        url = uri("https://maven.pkg.github.com/TsukimiyaProject/Lib4B")
+        url = uri("https://maven.pkg.github.com/TsukimiyaProject/NameLogger")
         credentials {
             username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
             password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("mc.tsukimiya:name-logger:0.1.0")
+    compileOnly("mc.tsukimiya:name-logger:1.0.0")
 }
 ```
 

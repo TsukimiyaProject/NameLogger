@@ -8,7 +8,7 @@ plugins {
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
 }
 
-group = "mc.tsukimiya.namelogger"
+group = "mc.tsukimiya"
 version = "0.1.0"
 
 val mcVersion = "1.20.1"

@@ -2,7 +2,7 @@ package mc.tsukimiya.namelogger.domain
 
 import java.util.*
 
-internal interface AccountRepository {
+interface AccountRepository {
     /**
      * アカウント取得
      * @param uuid

@@ -1,4 +1,4 @@
-# NameLogger v0.1.0
+# NameLogger v1.1.0
 UUID ⇒ 名前のマッピングプラグイン  
 サーバー入室時にプレイヤー名が保存される。  
 v2.0で変更履歴実装予定
@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("mc.tsukimiya:name-logger:1.0.0")
+    compileOnly("mc.tsukimiya:name-logger:1.1.0")
 }
 ```
 
@@ -48,7 +48,9 @@ NameLogger.api.updateAccountName(uuid, name)
 
 ## DB
 ### accounts テーブル
-| カラム名 | 型 | 初期値 | Null許容 | インデックス | 内容 |
-| --- | --- | --- | --- | --- | --- |
-| id | BINARY(16) | | × | PRIMARY | プレイヤーのUUID |
-| name | VARCHAR(16) | | × | UNIQUE | プレイヤー名 |
+| カラム名 | データ型 | 主キー | 非Null | 一意 | 自動増加 | デフォルト値 | 内容 |
+| --- | --- | :---: | :---: | :---: | :---: | --- | --- |
+| id | BINARY(16) | ○ | ○ | ○ | × | | プレイヤーのUUID |
+| name | VARCHAR(16) | × | ○ | ○ | × | | プレイヤー名 |
+| created_at | DATETIME | × | ○ | × | × | | レコード作成日 |
+| updated_at | DATETIME | × | ○ | × | × | | レコード更新日 |

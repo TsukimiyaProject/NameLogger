@@ -4,6 +4,7 @@ import mc.tsukimiya.namelogger.domain.Account
 import mc.tsukimiya.namelogger.domain.AccountRepository
 import mc.tsukimiya.namelogger.domain.Name
 import mc.tsukimiya.namelogger.infrastructure.dao.Accounts
+import java.time.LocalDateTime
 import java.util.*
 import mc.tsukimiya.namelogger.infrastructure.dao.Account as AccountDAO
 
@@ -26,6 +27,7 @@ internal class AccountRepositoryImpl : AccountRepository {
         if (dao != null) {
             // update
             dao.name = account.name.value
+            dao.updatedAt = LocalDateTime.now()
         } else {
             // insert
             AccountDAO.new(account.id) {

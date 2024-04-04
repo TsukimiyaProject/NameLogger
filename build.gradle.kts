@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "mc.tsukimiya"
-version = "1.0.0"
+version = "1.1.0"
 
 val mcVersion = "1.20.1"
 
@@ -32,6 +32,7 @@ dependencies {
     library("org.jetbrains.exposed:exposed-core:0.41.1")
     library("org.jetbrains.exposed:exposed-jdbc:0.41.1")
     library("org.jetbrains.exposed:exposed-dao:0.41.1")
+    library("org.jetbrains.exposed:exposed-java-time:0.41.1")
     library("org.xerial:sqlite-jdbc:3.41.2.2")
     library("com.mysql:mysql-connector-j:8.2.0")
 
@@ -41,6 +42,7 @@ dependencies {
     testImplementation("org.jetbrains.exposed:exposed-core:0.41.1")
     testImplementation("org.jetbrains.exposed:exposed-jdbc:0.41.1")
     testImplementation("org.jetbrains.exposed:exposed-dao:0.41.1")
+    testImplementation("org.jetbrains.exposed:exposed-java-time:0.41.1")
     testImplementation("org.xerial:sqlite-jdbc:3.41.2.2")
     testImplementation("com.zaxxer:HikariCP:4.0.3")
 }

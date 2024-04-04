@@ -9,4 +9,6 @@ class Account(id: EntityID<UUID>) : UUIDEntity(id) {
     companion object : UUIDEntityClass<Account>(Accounts)
 
     var name by Accounts.name
+    var createdAt by Accounts.createdAt
+    var updatedAt by Accounts.updatedAt
 }

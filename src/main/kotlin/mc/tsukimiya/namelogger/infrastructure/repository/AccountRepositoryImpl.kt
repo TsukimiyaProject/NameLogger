@@ -32,6 +32,8 @@ internal class AccountRepositoryImpl : AccountRepository {
             // insert
             AccountDAO.new(account.id) {
                 name = account.name.value
+                createdAt = LocalDateTime.now()
+                updatedAt = LocalDateTime.now()
             }
         }
     }

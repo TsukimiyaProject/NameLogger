@@ -50,7 +50,7 @@ NameLogger.api.updateAccountName(uuid, name)
 ### accounts テーブル
 | カラム名 | データ型 | 主キー | 非Null | 一意 | 自動増加 | デフォルト値 | 内容 |
 | --- | --- | :---: | :---: | :---: | :---: | --- | --- |
-| id | BINARY(16) | ○ | ○ | ○ | × | | プレイヤーのUUID |
+| id | BINARY(16) | ○ | ○ | × | × | | プレイヤーのUUID |
 | name | VARCHAR(16) | × | ○ | ○ | × | | プレイヤー名 |
 | created_at | DATETIME | × | ○ | × | × | | レコード作成日 |
 | updated_at | DATETIME | × | ○ | × | × | | レコード更新日 |

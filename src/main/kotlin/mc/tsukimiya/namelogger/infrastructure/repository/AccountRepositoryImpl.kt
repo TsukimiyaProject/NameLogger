@@ -4,6 +4,7 @@ import mc.tsukimiya.namelogger.domain.Account
 import mc.tsukimiya.namelogger.domain.AccountRepository
 import mc.tsukimiya.namelogger.domain.Name
 import mc.tsukimiya.namelogger.infrastructure.dao.Accounts
+import org.jetbrains.exposed.sql.lowerCase
 import java.time.LocalDateTime
 import java.util.*
 import mc.tsukimiya.namelogger.infrastructure.dao.Account as AccountDAO
@@ -15,7 +16,7 @@ internal class AccountRepositoryImpl : AccountRepository {
     }
 
     override fun findByName(name: Name): Account? {
-        val dao = AccountDAO.find { Accounts.name eq name.value }.firstOrNull() ?: return null
+        val dao = AccountDAO.find { Accounts.name.lowerCase() eq name.value.lowercase() }.firstOrNull() ?: return null
         return Account(dao.id.value, Name(dao.name))
     }
 

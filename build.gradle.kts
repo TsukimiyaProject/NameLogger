@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "mc.tsukimiya"
-version = "1.1.0"
+version = "1.1.1"
 
 val mcVersion = "1.20.1"
 
